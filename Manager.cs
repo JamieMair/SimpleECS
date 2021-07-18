@@ -2,7 +2,7 @@
 
 namespace SimpleECS
 {
-    public class Class1
+    public class Manager
     {
     }
 }
