@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SimpleECS.Basic
 {
-    public class DataStorage : IDataStorage
+    public class ComponentStorageCollection : IComponentStorageCollection
     {
         private Dictionary<Type, IComponentStorage<IComponent>> components;
 

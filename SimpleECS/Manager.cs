@@ -8,7 +8,7 @@ namespace SimpleECS
     {
         #region Fields
         private IDictionary<int, IEntity> _entities;
-        private IDataStorage _components;
+        private IComponentStorageCollection _components;
         #endregion
 
         #region Dependencies
@@ -16,7 +16,7 @@ namespace SimpleECS
         #endregion
 
         #region Constructor
-        public Manager(IEntityFactory entityFactory, IDataStorage _componentsStorage)
+        public Manager(IEntityFactory entityFactory, IComponentStorageCollection _componentsStorage)
         {
             _entityFactory = entityFactory;
             // Temporary - Need to fix
