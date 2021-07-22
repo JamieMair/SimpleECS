@@ -8,6 +8,9 @@ namespace SimpleECS.Interfaces
     {
         public int ID { get; set; }
 
-        public ICollection<IComponent> Components { get; set; }
+        public void RegisterComponent<T>(T component) where T : IComponent;
+        public void RemoveComponent<T>(T component) where T : IComponent;
+        public bool HasComponent<T>() where T : IComponent;
+        public T GetComponent<T>() where T : IComponent;
     }
 }
