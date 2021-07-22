@@ -4,8 +4,8 @@ using System.Text;
 
 namespace SimpleECS.Scheduling
 {
-    public class Scheduler
+    public interface INodeCollection : IEnumerable<INode>
     {
-
+        public bool IsEmpty();
     }
 }
