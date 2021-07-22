@@ -1,2 +1,2 @@
 # SimpleECS
- A simple ECS engine for C#
+ A simple ECS engine for C# currently under development.
