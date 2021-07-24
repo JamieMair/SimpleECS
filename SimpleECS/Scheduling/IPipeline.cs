@@ -11,6 +11,7 @@ namespace SimpleECS.Scheduling
         public INode AddConnectedNode(INode parentNode, INodeCollection childNodes);
         public INode AddConnectedNode(INode parentNode, INode childNode);
         public INode AddConnectedNode(INode parentNode);
+        public INode AddConnectedNode(INodeCollection parentNodes);
         public INode CreateRootNode();
         public INode InsertEndNode();
     }

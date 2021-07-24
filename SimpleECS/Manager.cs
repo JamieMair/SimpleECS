@@ -37,6 +37,7 @@ namespace SimpleECS
             return _entities.ContainsKey(id) ? _entities[id] : null;
         }
         #endregion
+
         #region Component Handling
         public T RegisterComponent<T>(T component, IEntity entity) where T : IComponent
         {
@@ -47,14 +48,18 @@ namespace SimpleECS
             componentStore.Add(component);
             return component;
         }
-        public T RemoveComponent<T>(T component) where T : IComponent
+        public T RemoveComponent<T>(IEntity entity, T component) where T : IComponent
         {
-            var entity = GetEntity(component.EntityID);
             entity.RemoveComponent(component);
             // Assume that the type has already been registered
             var componentStore = _components.GetStorage<T>();
             componentStore.Remove(component);
             return component;
+        }
+        public T RemoveComponent<T>(T component) where T : IComponent
+        {
+            var entity = GetEntity(component.EntityID);
+            return RemoveComponent<T>(entity, component);
         }
         #endregion
     }
